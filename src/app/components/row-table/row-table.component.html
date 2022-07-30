@@ -1,0 +1,10 @@
+<td>{{id}}</td>
+<td>{{name}}</td>
+<td>{{state}}</td>
+<td>
+    <app-stock-button 
+        [id]="id"
+        [state]="state"></app-stock-button>
+
+    <button type="button" class="btn btn-success leftMargin20" (click)="onClickGoToDetailProduct()">Details</button>
+</td>

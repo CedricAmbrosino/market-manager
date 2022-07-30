@@ -1,0 +1,29 @@
+<section class="container" style="padding: 20px 0;">
+  <app-header></app-header>
+  
+    <h1 style="text-align: center;">Market-Manager</h1>
+  
+    <div  style="text-align: center; display: flex; justify-content: center; gap:20px; padding: 10px 0;">
+      <button class="btn btn-primary"
+      (click)="onClickSwitchAllProductsStates('En stock')">Tous en stocks</button>
+      <button class="btn btn-primary"
+      (click)="onClickSwitchAllProductsStates('Pas en stock')">Aucun en stocks</button>
+    </div>
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th class="scope">id</th>
+          <th class="scope">nom</th>
+          <th class="scope">état</th>
+          <th class="scope">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of productsList" app-row-table
+          [id]="product.id"
+          [name]="product.name"
+          [state]="product.state">        
+        </tr>
+      </tbody>
+    </table>
+  </section>

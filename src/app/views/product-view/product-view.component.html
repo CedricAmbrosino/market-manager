@@ -1,0 +1,11 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{name}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">identifiant : {{id}}</h6>
+      <p class="card-text">statut : <span class="badge"  
+        [ngClass]="{'text-bg-success' : getStateInStock(),'text-bg-danger' : getStateNoStock(), 'text-bg-secondary' : getStateNoState()}"
+        >{{state}}</span></p>
+
+      <a routerLink="/" class="card-link">Retourner au Dashboard</a>
+    </div>
+</div>
