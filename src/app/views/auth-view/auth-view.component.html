@@ -1,7 +1,18 @@
 <h1>Authentification</h1>
 
-<form >
-    <input type="email" placeholder="email">
-    <input type="password" placeholder="mot de passe">
-    <input type="button" value="Se connecter" class="btn btn-dark" (click)="onClickToConnect()">
+<div
+    *ngIf="errorAuth"
+    class="alert alert-danger">
+    {{errorAuth}}
+</div>
+<form [formGroup]="authForm" (ngSubmit)="onSubmitAuth()">
+    <input type="email" placeholder="email"
+     id="email" name="email" 
+     formControlName="email"
+     [(ngModel)]="user.email">
+    <input type="password" placeholder="mot de passe" 
+    id="password" name="password" 
+    formControlName="password"
+    [(ngModel)]="user.password">
+    <input type="submit" value="Se connecter" class="btn btn-dark" [disabled]="authForm.invalid">
 </form>

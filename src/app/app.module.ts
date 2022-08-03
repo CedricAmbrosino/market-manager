@@ -11,6 +11,10 @@ import { AuthViewComponent } from './views/auth-view/auth-view.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { ProductViewComponent } from './views/product-view/product-view.component';
+import { NewProductViewComponent } from './views/new-product-view/new-product-view.component';
+import { EditProductViewComponent } from './views/edit-product-view/edit-product-view.component';
+import { ProfilViewComponent } from './views/profil-view/profil-view.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,11 +25,16 @@ import { ProductViewComponent } from './views/product-view/product-view.componen
     DashboardComponent,
     AuthViewComponent,
     HeaderComponent,
-    ProductViewComponent
+    ProductViewComponent,
+    NewProductViewComponent,
+    EditProductViewComponent,
+    ProfilViewComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]

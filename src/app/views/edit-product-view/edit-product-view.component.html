@@ -1,0 +1,21 @@
+<app-header></app-header>
+<h1 class="text-center">Modifier un nouveau produit</h1>
+
+<form (ngSubmit)="onSubmitEditProduct()" #newProductForm="ngForm">
+    <div class="form-group">
+        <label for="name"></label>
+        <input type="text" id="name" name="name"
+            #name = "ngModel"
+            [(ngModel)]="product.name"/>
+    </div>
+    <div>
+        <label for="state"></label>
+        <select id="state" name="state" 
+            #state="ngModel"
+            [(ngModel)]="product.state">            
+            <option value="Pas en stock">Pas en stock</option>
+            <option value="En stock">En stock</option>
+        </select>
+    </div>
+    <input type="submit" value="Ajouter" [disabled]="newProductForm.invalid"/>
+</form>
